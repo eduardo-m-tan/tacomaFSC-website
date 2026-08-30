@@ -6,11 +6,11 @@ Use this structure:
 
 ## Criteria Drafts
 
-1. Responsive:
-2. Responsive:
-3. Accessibility:
-4. Accessibility:
-5. Browser support or fallback:
-6. Performance:
+1. Responsive: When the page is responsive, all contents of the page must be visible so that any mobile/tablet/PC user can utilize it. I will test this by using DevTools, testing viewport width between 400px and wide desktop views, and different zoom percentages up to 200%.
+2. Responsive: When the page is responsive, text will must be reasonably sized so that any viewport size will experience good usability. I will test this by using DevTools, testing viewport width between 400px and wide desktop views, and different zoom percentages up to 200%.
+3. Accessibility: When the page is accessible, the page will maintain proper color contrast and :focus-visible usage to allow low vision users to utilize this page. I will test this by browser observation and Web AIM contrast checker.
+4. Accessibility: When the page is accessible, the content must have proper content/header structure so that screen reader users will be able to utilize this page. I will test this by utilizing Nu Html Checker, axe DevTools.
+5. Browser support or fallback: When the page is supporting multiple browsers or older versions, font styles will have at least one default fallback available to most users. I will test this initially through Microsoft Edge, Google Chrome, and Mozilla FireFox.
+6. Performance: 
 7. Metadata or discoverability:
 8. Release quality:
