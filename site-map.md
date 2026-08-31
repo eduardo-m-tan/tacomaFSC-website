@@ -31,12 +31,9 @@ The audience will be prospective figure skaters and/or their parents in the area
 - Local Events
   - Purpose: Allow active figure skaters to see local events at other organizations
   - Key content: Local competitions, local camps
-- Visit Us
-  - Purpose: Give users address/maps information and recommendations
-  - Key content: Info for seating information, viewing information, check-in directions, clothing recommendations
-- Contact Us
-  - Purpose: Allow users to contact the rink board with questions
-  - Key content: Form for users to contact the rink board
+- Visit Us/Contact Us
+  - Purpose: Give users address/maps information and recommendations / allow users to contact the rink board with questions
+  - Key content: Info for seating information, viewing information, check-in directions, clothing recommendations and a form for users to contact the rink board
 
 
 ## Content Risks to Resolve
