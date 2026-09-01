@@ -3,8 +3,8 @@
 ## Proposed Site Map
 
 - Home
-  - Purpose: Allow users to gain a quick overview of the site and club
-  - Key content: Overview, upcoming events/shows, link to group class page or extended schedule page
+  - Purpose: Allow users to gain a quick overview of the site and club, visiting information located at the bottom
+  - Key content: Overview, upcoming events/shows, visiting information located at the bottom, link to group class page or extended schedule page
 - Group Classes
   - Purpose: Give new skaters an idea of how to get started, register for Learn-to-Skate classes
   - Key content: Group class levels, group class schedule, things to bring, link to extended schedule page
@@ -17,8 +17,8 @@
 - Local Events
   - Purpose: Allow active figure skaters to see local events at other organizations
   - Key content: Local competitions, local camps
-- Visit Us/Contact Us
-  - Purpose: Give users address/maps information and recommendations / allow users to contact the rink board with questions
+- Contact Us
+  - Purpose: Allow users to contact the rink board with questions
   - Key content: Info for seating information, viewing information, check-in directions, clothing recommendations and a form for users to contact the rink board
 
 
