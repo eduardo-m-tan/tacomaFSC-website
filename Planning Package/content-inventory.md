@@ -1,4 +1,4 @@
-# Content Inventory Template
+# Content Inventory
 
 | ID | Content item | Purpose | Format | Source/owner | Status | Risk or note |
 
