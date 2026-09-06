@@ -28,4 +28,4 @@ The purpose of this website is to provide information that figure skaters would 
 - Learn to Skate schedule available on mentioned (external) website
 
 ## AI Disclosure and Sources
-This assignment as been completed independently without the use of any AI. Primary coding sources are MDN and given class resources. Source for site information is the Tacoma Twin Rinks site and the skating director, Elaine Jurun.
+This assignment as been completed independently without the use of any AI. Primary coding sources are MDN and given class resources. Source for site information is the Tacoma Twin Rinks site and the figure skating director, Elaine Jurun.
