@@ -1,6 +1,6 @@
 
 
-@layer reset, base, layout, components, utilities, states, overrides;
+@layer reset, base, layout, components, utilities, states, overrides, queries;
 
 /* Import Google Fonts */
 
@@ -13,6 +13,9 @@
     box-sizing: border-box;
   }
   body {
+    margin: 0;
+  }
+  ul, li {
     margin: 0;
   }
 }
@@ -31,6 +34,7 @@
     --color-background: #ccffff;
     --color-contrast: #FF83CD;
     /* Spacing scale was decided based on browser inspection */
+    --space-xxs: .5rem;
     --space-xs: .75rem;
     --space-sm: 1rem;
     --space-md: 1.5rem;
@@ -38,6 +42,7 @@
     --space-xl: 3rem;
   }
   body {
+    min-width: 600px;
     background-color: var(--color-background);
     font-family: 'Inter', 'Open Sans', 'Arial', sans-serif;
     line-height: var(--space-md);
@@ -50,9 +55,7 @@
   h2, h3 {
     font-family: 'Montserrat', 'Helvetica', sans-serif;
     color: var(--color-heading);
-  }
-  section {
-    margin-bottom: var(--space-md);
+    margin: 0;
   }
   nav ul {
     list-style: none;
@@ -81,16 +84,17 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 10px 20px;
-    max-width: 1440px;
+    padding: var(--space-sm) var(--space-lg);
     margin: 0 auto;
     background-color: var(--color-surface);
   }
-  .container {
-    max-width: 1440px;
-    margin: 0 auto;
-    padding: 0 var(--space-md);
+  body section {
+    padding: var(--space-lg) var(--space-xl);
     background-color: var(--color-surface);
+  }
+  .container {
+    margin: 0 auto;
+    max-width: 1440px;
   }
   .card-container {
     display: grid;
@@ -103,6 +107,9 @@
 @layer components {
   .hero {
     padding: var(--space-lg) 0;
+  }
+  .hero-text {
+    max-width: 50%;
   }
   .card {
     background-color: var(--color-card);
@@ -158,12 +165,26 @@
   /* Keep this layer small. Use it only for intentional exceptions. */
 }
 
-@media print {
-  .card {
-    box-shadow: none;
-    border: 1px solid var(--color-primary);
+@layer queries {
+  /* Media query for tablet/small desktop view */
+  @media screen and (min-width: 1024px) {
+    
   }
-  nav, button {
-    display: none;
+
+  /* Media query for desktop sizes */
+  @media screen and (min-width: 1440px) {
+    
+  }
+
+  /* Media query for print styles */
+  @media print {
+    .card {
+      box-shadow: none;
+      border: 1px solid var(--color-primary);
+    }
+    nav, button {
+      display: none;
+    }
   }
 }
+
