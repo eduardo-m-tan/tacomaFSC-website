@@ -1,4 +1,4 @@
-# CSS Archictecture Assignment Notes
+# CSS Architecture Notes
 
 ## Layer Order
 
