@@ -49,8 +49,9 @@
     color: var(--color-primary);
   }
   h1 {
-    font-family: 'Playfair Display', 'Helvetica', sans-serif;
-    color: var(--color-important);
+    text-wrap: no-wrap;
+    color: transparent;
+    font-size: 0;
   }
   h2, h3 {
     font-family: 'Montserrat', 'Helvetica', sans-serif;
@@ -88,13 +89,21 @@
     margin: 0 auto;
     background-color: var(--color-surface);
   }
+  h1 {
+    background-image: url('images/logo/TacomaFSC_logo_Extended.svg');
+    background-repeat: no-repeat; 
+    background-position: left;
+    background-size: contain;
+    width: 300px;
+    height: 100px;
+  }
   body section {
     padding: var(--space-lg) var(--space-xl);
     background-color: var(--color-surface);
   }
   .container {
     margin: 0 auto;
-    max-width: 1440px;
+    max-width: 90%;
   }
   .card-container {
     display: grid;
@@ -162,7 +171,7 @@
 
 /* For intentional overrides that are intentional */
 @layer overrides {
-  /* Keep this layer small. Use it only for intentional exceptions. */
+  
 }
 
 @layer queries {
