@@ -1,0 +1,148 @@
+@layer reset, base, layout, components, utilities, states, overrides;
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
+
+@layer reset {
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+  }
+  body {
+    margin: 0;
+  }
+}
+
+/* For element defaults and global rhythm */
+@layer base {
+  :root {
+    --color-important: #378FDC;
+    --color-heading: #3d669b;
+    --color-text: #29264c;
+    --color-card: #F5F5F5;
+    --color-surface: #FEFEFE;
+    --color-background: #ccffff;
+    --color-contrast: #FF83CD;
+    --space-xs: .75rem;
+    --space-sm: 1rem;
+    --space-md: 1.5rem;
+    --space-lg: 2rem;
+    --space-xl: 3rem;
+  }
+  body {
+    background-color: var(--color-background);
+    font-family: 'Inter', 'Open Sans', 'Arial', sans-serif;
+    line-height: var(--space-md);
+    color: var(--color-text);
+  }
+  h1 {
+    font-family: 'Playfair Display', 'Helvetica', sans-serif;
+    color: var(--color-important);
+  }
+  h2, h3 {
+    font-family: 'Montserrat', 'Helvetica', sans-serif;
+    color: var(--color-heading);
+  }
+  section {
+    margin-bottom: var(--space-md);
+  }
+  nav ul {
+    list-style: none;
+    display: flex;
+    gap: var(--space-md);
+    padding: 0;
+    margin: 0;
+  }
+  a {
+    text-decoration: none;
+    color: var(--color-text);
+  }
+  img,
+  svg {
+    max-width: 100%;
+  }
+}
+
+/* For page-level structure, layout, composition, and major regions */
+@layer layout {
+   header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    max-width: 1440px;
+    margin: 0 auto;
+    background-color: var(--color-surface);
+  }
+  .hero {
+    text-align: center;
+  }
+  .container {
+    max-width: 1440px;
+    margin: 0 auto;
+    padding: 0 var(--space-md);
+    background-color: var(--color-surface);
+  }
+  .card-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-md);
+  }
+}
+
+/* For reusable interface/content patterns (buttons, cards, callouts, forms) */
+@layer components {
+  .card {
+    background-color: var(--color-card);
+    border-radius: var(--space-md);
+    padding: var(--space-xs) var(--space-md);
+    box-shadow: 4px 4px 4px gray;
+  }
+  .card img {
+    max-height: 300px;
+  }
+  button {
+    background-color: var(--color-important);
+    font-size: var(--space-sm);
+    border: none;
+    color: white;
+    padding: var(--space-xs) var(--space-md);
+    border-radius: var(--space-xs);
+    cursor: pointer;
+  }
+}
+
+/* For small, single-purpose adjustments */
+@layer utilities {
+  .visually-hidden {
+    position: absolute;
+    inline-size: 1px;
+    block-size: 1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    white-space: nowrap;
+    clip-path: inset(50%);
+  }
+}
+
+/* For state interactions, validation, or current-location styling */
+@layer states {
+  a:hover, button:hover {
+    background-color: var(--color-contrast);
+  }
+}
+
+/* For intentional overrides that are intentional */
+@layer overrides {
+  /* Keep this layer small. Use it only for intentional exceptions. */
+}
+
+@media print {
+  .card {
+    box-shadow: none;
+    border: 1px solid var(--color-text);
+  }
+  nav, button {
+    display: none;
+  }
+}

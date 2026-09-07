@@ -17,7 +17,7 @@
 
 ## Foundational decisions
 
-- Primary coloring will lean towards simple black/white, blue hues found in the logo, and pink-magenta hues for a contrasting color
+- Primary coloring will lean towards simple black/white, blue hues found in the logo, and pink hue for a contrasting color
 - Fonts expected to be used: Playfair Display, Montserrat, and Inter imported from google fonts
     - @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
 - Spacing will be variable dependent on display size, expecting a range of 4-8px between sections and 12-24px for padding, margins, or gaps.
