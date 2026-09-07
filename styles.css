@@ -1,4 +1,8 @@
+/* Utilizing given layer order with an additional states layer before overrides */
+
 @layer reset, base, layout, components, utilities, states, overrides;
+
+/* Import Google Fonts */
 
 @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
 
@@ -15,14 +19,18 @@
 
 /* For element defaults and global rhythm */
 @layer base {
+    /* Define color palette and spacing scale */
   :root {
+    /* Colors based on logo, components, and later plans */
     --color-important: #378FDC;
     --color-heading: #3d669b;
-    --color-text: #29264c;
+    /* Color primary is used for text but also dark shades like shadows and borders */
+    --color-primary: #29264c;
     --color-card: #F5F5F5;
     --color-surface: #FEFEFE;
     --color-background: #ccffff;
     --color-contrast: #FF83CD;
+    /* Spacing scale was decided based on browser inspection */
     --space-xs: .75rem;
     --space-sm: 1rem;
     --space-md: 1.5rem;
@@ -33,7 +41,7 @@
     background-color: var(--color-background);
     font-family: 'Inter', 'Open Sans', 'Arial', sans-serif;
     line-height: var(--space-md);
-    color: var(--color-text);
+    color: var(--color-primary);
   }
   h1 {
     font-family: 'Playfair Display', 'Helvetica', sans-serif;
@@ -55,7 +63,7 @@
   }
   a {
     text-decoration: none;
-    color: var(--color-text);
+    color: var(--color-primary);
   }
   footer {
     padding: var(--space-md);
@@ -131,7 +139,7 @@
     text-align: center;
   }
   .top-border {
-    border-top: 1px solid var(--color-text);
+    border-top: 1px solid var(--color-primary);
   }
   .bottom-space {
     padding-bottom: var(--space-md);
@@ -153,7 +161,7 @@
 @media print {
   .card {
     box-shadow: none;
-    border: 1px solid var(--color-text);
+    border: 1px solid var(--color-primary);
   }
   nav, button {
     display: none;
