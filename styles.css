@@ -57,6 +57,10 @@
     text-decoration: none;
     color: var(--color-text);
   }
+  footer {
+    padding: var(--space-md);
+    background-color: var(--color-surface);
+  }
   img,
   svg {
     max-width: 100%;
@@ -74,9 +78,6 @@
     margin: 0 auto;
     background-color: var(--color-surface);
   }
-  .hero {
-    text-align: center;
-  }
   .container {
     max-width: 1440px;
     margin: 0 auto;
@@ -92,13 +93,16 @@
 
 /* For reusable interface/content patterns (buttons, cards, callouts, forms) */
 @layer components {
+  .hero {
+    padding: var(--space-lg) 0;
+  }
   .card {
     background-color: var(--color-card);
     border-radius: var(--space-md);
     padding: var(--space-xs) var(--space-md);
     box-shadow: 4px 4px 4px gray;
   }
-  .card img {
+  .event-card img {
     max-height: 300px;
   }
   button {
@@ -122,6 +126,15 @@
     clip: rect(0 0 0 0);
     white-space: nowrap;
     clip-path: inset(50%);
+  }
+  .text-center {
+    text-align: center;
+  }
+  .top-border {
+    border-top: 1px solid var(--color-text);
+  }
+  .bottom-space {
+    padding-bottom: var(--space-md);
   }
 }
 
