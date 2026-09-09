@@ -40,16 +40,15 @@
     --space-md: 1.5rem;
     --space-lg: 2rem;
     --space-xl: 3rem;
+    --space-xxl: 4rem;
   }
   body {
     background-color: var(--color-background);
     font-family: 'Inter', 'Open Sans', 'Arial', sans-serif;
     line-height: var(--space-md);
     color: var(--color-primary);
-  }
-  h1 {
-    color: transparent;
-    font-size: 0;
+    min-width: 320px;
+    font-size: 16px;
   }
   h2, h3 {
     font-family: 'Montserrat', 'Helvetica', sans-serif;
@@ -58,7 +57,6 @@
   }
   nav ul {
     list-style: none;
-    display: flex;
     gap: var(--space-md);
     padding: 0;
     margin: 0;
@@ -79,15 +77,18 @@
 
 /* For page-level structure, layout, composition, and major regions */
 @layer layout {
-   header {
+  header {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    background-color: var(--color-surface);
+    position: relative;
+  }
+  /* Original spacing for header and nav, needs to be tweaked for mobile-first design
+   header {
     padding: var(--space-sm) var(--space-lg);
     margin: 0 auto;
-    background-color: var(--color-surface);
-    padding-inline: 0;
-  }
+  }*/
   body section {
     padding: var(--space-lg) var(--space-xl);
     background-color: var(--color-surface);
@@ -105,24 +106,105 @@
 
 /* For reusable interface/content patterns (buttons, cards, callouts, forms) */
 @layer components {
+  /* Logo components */
   #logo {
     background-image: url('images/logo/TacomaFSC_logo_Extended Logo.svg');
     background-repeat: no-repeat; 
     background-position: left;
     background-size: contain;
-    min-width: 200px;
+    min-width: 175px;
     min-height: 100px;
   }
-  #logo a {
-    font-size: var(--space-lg);
-    opacity: 1;
+
+  /* Nav Hamburger Styles */
+  nav {
+    width: 100%;
+    text-align: right;
   }
+  nav ul {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    overflow: hidden;
+    text-align: center;
+    max-height: 0;
+    width: 100%;
+    background-color: var(--color-card);
+    transition: max-height .5s ease;
+  }
+  nav li a {
+    display: block;
+    font-size: var(--space-sm);
+    padding: var(--space-sm) var(--space-xs);
+    font-weight: bolder;
+    color: var(--color-primary);
+    transition: background-color .3s ease-in;
+    border-top: 3px solid var(--color-important);
+  }
+  nav label {
+    cursor: pointer;
+    display: inline-block;
+    padding: var(--space-sm);
+    user-select: none;
+  }
+  nav label span {
+    background-color: var(--color-primary);
+    margin-right: var(--space-xxs);
+    display: block;
+    height: .2rem;
+    position: relative;
+    transition: background-color .3s ease-out;
+    width: var(--space-lg);
+  }
+  nav label span:before, 
+  nav label span:after {
+    background-color: var(--color-primary);
+    content: '';
+    display: block;
+    position: absolute;
+    transition: all .2s ease-out;
+    height: 100%;
+    width: 100%;
+  }
+  nav label span:before {
+    top: var(--space-xxs);
+  }
+  nav label span:after {
+    top: -.5rem;
+  }
+  nav input {
+    display: none;
+  }
+  nav input:checked ~ ul {
+    max-height: 500px;
+  }
+  nav input:checked ~ label span {
+    background: transparent;
+  }
+  nav input:checked ~ label span:before {
+    transform: rotate(-45deg);
+  }
+  nav input:checked ~ label span:after {
+    transform: rotate(45deg);
+  }
+  nav input:checked ~ label:not(.steps) span:before, 
+  nav input:checked ~ label:not(.steps) span:after {
+    top: 0;
+  } 
+
+  /* Hero Styles */
   .hero {
-    padding: var(--space-lg) 0;
+    padding: var(--space-xxl);
+    background: linear-gradient(var(--color-important), rgba(0, 0, 0, 0.5) 3%), url("images/placeholder-skating-img.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    height: 85vh;
+    place-items: center;
+    overflow: hidden;
+    color: var(--color-surface);
   }
-  .hero-text {
-    max-width: 50%;
-  }
+  /* Card styles */
   .card {
     background-color: var(--color-card);
     border-radius: var(--space-md);
@@ -140,6 +222,7 @@
     padding: var(--space-xs) var(--space-md);
     border-radius: var(--space-xs);
     cursor: pointer;
+    white-space: nowrap;
   }
 }
 
@@ -169,6 +252,11 @@
 @layer states {
   a:hover, button:hover {
     background-color: var(--color-contrast);
+  }
+  nav a:hover, 
+  nav input:hover {
+    background-color: var(--color-primary);
+    color: var(--color-surface);
   }
 }
 
