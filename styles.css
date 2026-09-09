@@ -1,4 +1,4 @@
-
+/* Layer structure  */
 
 @layer reset, base, layout, components, utilities, states, overrides, queries;
 
@@ -34,21 +34,19 @@
     --color-background: #ccffff;
     --color-contrast: #FF83CD;
     /* Spacing scale was decided based on browser inspection */
-    --space-xxs: .5rem;
-    --space-xs: .75rem;
-    --space-sm: 1rem;
-    --space-md: 1.5rem;
-    --space-lg: 2rem;
-    --space-xl: 3rem;
-    --space-xxl: 4rem;
+    --size-xxs: .5rem;
+    --size-xs: .75rem;
+    --size-sm: 1rem;
+    --size-md: 1.5rem;
+    --size-lg: 2rem;
+    --size-xl: 3rem;
+    --size-xxl: 4rem;
   }
   body {
     background-color: var(--color-background);
     font-family: 'Inter', 'Open Sans', 'Arial', sans-serif;
-    line-height: var(--space-md);
+    line-height: var(--size-md);
     color: var(--color-primary);
-    min-width: 320px;
-    font-size: 16px;
   }
   h2, h3 {
     font-family: 'Montserrat', 'Helvetica', sans-serif;
@@ -57,7 +55,7 @@
   }
   nav ul {
     list-style: none;
-    gap: var(--space-md);
+    gap: var(--size-md);
     padding: 0;
     margin: 0;
   }
@@ -66,7 +64,7 @@
     color: var(--color-primary);
   }
   footer {
-    padding: var(--space-md);
+    padding: var(--size-md);
     background-color: var(--color-surface);
   }
   img,
@@ -84,36 +82,31 @@
     background-color: var(--color-surface);
     position: relative;
   }
-  /* Original spacing for header and nav, needs to be tweaked for mobile-first design
-   header {
-    padding: var(--space-sm) var(--space-lg);
-    margin: 0 auto;
-  }*/
   body section {
-    padding: var(--space-lg) var(--space-xl);
+    padding: var(--size-md);
     background-color: var(--color-surface);
   }
   .container {
-    margin: 0 auto;
-    max-width: 95%;
+    max-width: 100%;
   }
   .card-container {
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: var(--space-md);
+    grid-template-columns: 1fr;
+    gap: var(--size-md);
   }
 }
 
 /* For reusable interface/content patterns (buttons, cards, callouts, forms) */
 @layer components {
-  /* Logo components */
+  /* Logo component */
   #logo {
-    background-image: url('images/logo/TacomaFSC_logo_Extended Logo.svg');
+    background-image: url('images/logo/TacomaFSC_logo_Default\ Logo.svg');
     background-repeat: no-repeat; 
     background-position: left;
     background-size: contain;
-    min-width: 175px;
-    min-height: 100px;
+    margin-left: var(--size-xs);
+    min-width: 35vw;
+    min-height: 13vh;
   }
 
   /* Nav Hamburger Styles */
@@ -134,8 +127,8 @@
   }
   nav li a {
     display: block;
-    font-size: var(--space-sm);
-    padding: var(--space-sm) var(--space-xs);
+    font-size: var(--size-sm);
+    padding: var(--size-sm) var(--size-xs);
     font-weight: bolder;
     color: var(--color-primary);
     transition: background-color .3s ease-in;
@@ -144,17 +137,17 @@
   nav label {
     cursor: pointer;
     display: inline-block;
-    padding: var(--space-sm);
+    padding: var(--size-sm);
     user-select: none;
   }
   nav label span {
     background-color: var(--color-primary);
-    margin-right: var(--space-xxs);
+    margin-right: var(--size-xxs);
     display: block;
     height: .2rem;
     position: relative;
     transition: background-color .3s ease-out;
-    width: var(--space-lg);
+    width: var(--size-lg);
   }
   nav label span:before, 
   nav label span:after {
@@ -167,7 +160,7 @@
     width: 100%;
   }
   nav label span:before {
-    top: var(--space-xxs);
+    top: var(--size-xxs);
   }
   nav label span:after {
     top: -.5rem;
@@ -194,7 +187,7 @@
 
   /* Hero Styles */
   .hero {
-    padding: var(--space-xxl);
+    padding: var(--size-lg);
     background: linear-gradient(var(--color-important), rgba(0, 0, 0, 0.5) 3%), url("images/placeholder-skating-img.jpg");
     background-repeat: no-repeat;
     background-position: center;
@@ -204,11 +197,25 @@
     overflow: hidden;
     color: var(--color-surface);
   }
+  .hero-text {
+    margin: var(--size-sm);
+    height: 60vh;
+    display: grid;
+    place-items: center;
+    gap: var(--size-xxs)
+  }
+  .hero-text h2 {
+    color: var(--color-surface);
+    font-size: var(--size-md);
+  }
+  .hero-text p {
+    border-radius: 10px;
+  }
   /* Card styles */
   .card {
     background-color: var(--color-card);
-    border-radius: var(--space-md);
-    padding: var(--space-xs) var(--space-md);
+    border-radius: var(--size-md);
+    padding: var(--size-xs) var(--size-md);
     box-shadow: 4px 4px 4px gray;
   }
   .event-card img {
@@ -216,11 +223,11 @@
   }
   button, .button {
     background-color: var(--color-important);
-    font-size: var(--space-sm);
+    font-size: var(--size-sm);
     border: none;
     color: white;
-    padding: var(--space-xs) var(--space-md);
-    border-radius: var(--space-xs);
+    padding: var(--size-xs) var(--size-md);
+    border-radius: var(--size-xs);
     cursor: pointer;
     white-space: nowrap;
   }
@@ -243,9 +250,6 @@
   .top-border {
     border-top: 1px solid var(--color-primary);
   }
-  .bottom-space {
-    padding-bottom: var(--space-md);
-  }
 }
 
 /* For state interactions, validation, or current-location styling */
@@ -258,32 +262,137 @@
     background-color: var(--color-primary);
     color: var(--color-surface);
   }
+  a:focus-visible, 
+  button:focus-visible,
+  input:focus-visible {
+    border: 5px dashed #FF83CD;
+  }
 }
 
-/* For intentional overrides that are intentional */
+/* For intentional overrides that are intentional, layer should be minimal */
 @layer overrides {
   
 }
 
 @layer queries {
-  /* Media query for tablet/small desktop view */
+  /* Media query for tablet */
+  @media screen and (min-width: 768px) {
+    @layer base {
+      .container {
+        margin: 0 auto;
+        max-width: 95%;
+      }
+      .card-container {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+    @layer components {
+      #logo {
+        background-image: url('images/logo/TacomaFSC_logo_Extended\ Logo.svg');
+      }
+    }
+    @layer utilities {
+
+    }
+    @layer states {
+
+    }
+    @layer overrides {
+
+    }
+  }
+
+  /* Media query for laptop sizes */
   @media screen and (min-width: 1024px) {
-    
+    @layer base {
+      .container {
+        margin: 0 auto;
+        max-width: 85%;
+      }
+      .card-container {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+    @layer components {
+      #logo {
+        background-image: url('images/logo/TacomaFSC_logo_Logo\ Banner.svg');
+        margin-left: var(--size-md);
+      }
+      /* Styles to expand navigation */
+      nav label span, 
+      nav input {
+        display: none;
+      }
+      nav ul {
+        overflow: visible;
+        position: absolute;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+        top: 20%;
+        right: var(--size-sm);
+        align-items: center;
+        gap: 1em;
+        max-width: 55vw;
+      }
+      nav li a {
+        justify-content: center;
+        white-space: nowrap;
+      }
+    }
+    @layer utilities {
+
+    }
+    @layer states {
+
+    }
+    @layer overrides {
+
+    }
   }
 
   /* Media query for desktop sizes */
   @media screen and (min-width: 1440px) {
-    
+    @layer base {
+      .container {
+        margin: 0 auto;
+        max-width: 75%;
+      }
+    }
+    @layer components { 
+      
+    }
+    @layer utilities {
+
+    }
+    @layer states {
+
+    }
+    @layer overrides {
+      
+    }
   }
 
   /* Media query for print styles */
   @media print {
-    .card {
-      box-shadow: none;
-      border: 1px solid var(--color-primary);
+    @layer base {
+        nav, button, .button {
+        display: none;
+      }
     }
-    nav, button {
-      display: none;
+    @layer components {
+      .card {
+        box-shadow: none;
+        border: 1px solid var(--color-primary);
+      }
+    }
+    @layer utilities {
+
+    }
+    @layer states {
+
+    }
+    @layer overrides {
+      
     }
   }
 }
