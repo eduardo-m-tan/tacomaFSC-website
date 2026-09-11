@@ -2,14 +2,26 @@
 
 ## Layer Order
 
-- I utilized the given layer order with one additional 'states' layer before the overrides layer
+- I utilized the order of: 
+- reset, base, components, utilities, states, overrides, and queries
 
 ## Token Decisions 
 
-- I am using a ranging scale of blue hues based off the logo (I have yet to implement)
-- I named the default text color to 'primary' so I could use it for shadows and borders as needed
-- Pink will be the contrasting color used for accessibility features later on
+- I am using a ranging scale of blue hues based off the logo
+    - I named each color according to their use case, 
+        - Primary is a dark blue hue used for dark text, lines, or items that would normally be black on a typical webpage.
+        - Important is a light blue used for links and buttons and to catch attention
+        - Heading is another blue hue utilized for headings to stand out
+        - Card is used for cards to show slight contrast between background and foreground
+        - Surface is the top layer color used for the background of all elements
+        - Debug has been implemented temporarily for debugging.
 - I switched to using rem scaling for the styles so it will be easier to adapt into smaller views when I fixed it up for mobile first
+    - Sizing scale was decided based on browser inspection using Chrome DevTools in mobile view
+
+## Browser Checks
+
+- I utilized Chrome DevTools in the responsive view and mobile viewport widths down to 320px and desktop viewport widths up to 1980px.
+- I tested the keyboard navigation for focus-visible pseudo class usage
 
 ## CSS Ease
 

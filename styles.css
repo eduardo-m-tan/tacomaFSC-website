@@ -31,7 +31,7 @@
     --color-primary: #29264c;
     --color-card: #F5F5F5;
     --color-surface: #FEFEFE;
-    --color-background: #ccffff;
+    --color-debug: #ccffff;
     --color-contrast: #FF83CD;
     /* Spacing scale was decided based on browser inspection */
     --size-xxs: .5rem;
@@ -43,7 +43,7 @@
     --size-xxl: 4rem;
   }
   body {
-    background-color: var(--color-background);
+    background-color: var(--color-debug);
     font-family: 'Inter', 'Open Sans', 'Arial', sans-serif;
     line-height: var(--size-md);
     color: var(--color-primary);
@@ -262,6 +262,10 @@
     background-color: var(--color-primary);
     color: var(--color-surface);
   }
+  .current-page {
+    font-style: italic;
+    color: var(--color-heading);
+  }
   a:focus-visible, 
   button:focus-visible,
   input:focus-visible {
@@ -375,11 +379,20 @@
   /* Media query for print styles */
   @media print {
     @layer base {
-        nav, button, .button {
+      nav, button, .button {
         display: none;
       }
     }
     @layer components {
+      #logo {
+        print-color-adjust: exact;
+        -webkit-print-color-adjust: exact;
+      }
+      .hero,
+      .hero-text {
+        height: auto;
+        color: var(--color-primary)
+      }
       .card {
         box-shadow: none;
         border: 1px solid var(--color-primary);
@@ -392,7 +405,7 @@
 
     }
     @layer overrides {
-      
+
     }
   }
 }
