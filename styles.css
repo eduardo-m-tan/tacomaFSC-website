@@ -32,7 +32,7 @@
     --color-card: #F5F5F5;
     --color-surface: #FEFEFE;
     --color-debug: #ccffff;
-    --color-contrast: #FF83CD;
+    --color-contrast: #9000FF;
     /* Spacing scale was decided based on browser inspection */
     --size-xxs: .5rem;
     --size-xs: .75rem;
@@ -41,6 +41,9 @@
     --size-lg: 2rem;
     --size-xl: 3rem;
     --size-xxl: 4rem;
+  }
+  html {
+    min-width: 400px;
   }
   body {
     background-color: var(--color-debug);
@@ -188,29 +191,26 @@
   /* Hero Styles */
   .hero {
     padding: var(--size-lg);
-    background: linear-gradient(var(--color-important), rgba(0, 0, 0, 0.5) 3%), url("images/placeholder-skating-img.jpg");
+    background: linear-gradient(var(--color-important), rgba(0, 0, 0, 0.5) 5%), url("images/placeholder-skating-img.jpg");
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
     height: 85vh;
+    display: grid;
     place-items: center;
     overflow: hidden;
     color: var(--color-surface);
   }
   .hero-text {
-    margin: var(--size-sm);
-    height: 60vh;
     display: grid;
-    place-items: center;
-    gap: var(--size-xxs)
+    gap: var(--size-md);
   }
   .hero-text h2 {
+    padding-top: var(--size-sm);
     color: var(--color-surface);
-    font-size: var(--size-md);
+    font-size: var(--size-lg);
   }
-  .hero-text p {
-    border-radius: 10px;
-  }
+
   /* Card styles */
   .card {
     background-color: var(--color-card);
@@ -218,15 +218,19 @@
     padding: var(--size-xs) var(--size-md);
     box-shadow: 4px 4px 4px gray;
   }
+  .card h3 {
+    padding-block: var(--size-sm);
+  }
   .event-card img {
     max-height: 300px;
   }
+
   button, .button {
-    background-color: var(--color-important);
+    background-color: var(--color-primary);
     font-size: var(--size-sm);
     border: none;
-    color: white;
-    padding: var(--size-xs) var(--size-md);
+    color: var(--color-surface);
+    padding: var(--size-sm) var(--size-md);
     border-radius: var(--size-xs);
     cursor: pointer;
     white-space: nowrap;
@@ -250,12 +254,20 @@
   .top-border {
     border-top: 1px solid var(--color-primary);
   }
+  .blur {
+    backdrop-filter: blur(20px);
+    border-radius: 20px;
+  }
+  /* Modification Class to Shorten Hero */
+  .bannerModification {
+    height: 20vh;
+  }
 }
 
 /* For state interactions, validation, or current-location styling */
 @layer states {
   a:hover, button:hover {
-    background-color: var(--color-contrast);
+    background-color: var(--color-important);
   }
   nav a:hover, 
   nav input:hover {
@@ -264,12 +276,14 @@
   }
   .current-page {
     font-style: italic;
-    color: var(--color-heading);
+    font-weight: 500;
   }
   a:focus-visible, 
   button:focus-visible,
   input:focus-visible {
-    border: 5px dashed #FF83CD;
+    outline: 5px dashed black;
+    outline-offset: 2px;
+    box-shadow: 0 0 0 5px var(--color-surface);
   }
 }
 
@@ -293,6 +307,10 @@
     @layer components {
       #logo {
         background-image: url('images/logo/TacomaFSC_logo_Extended\ Logo.svg');
+      }
+      
+      .hero-text {
+        max-width: 75vw;
       }
     }
     @layer utilities {
@@ -332,7 +350,7 @@
         position: absolute;
         display: grid;
         grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-        top: 20%;
+        top: 25%;
         right: var(--size-sm);
         align-items: center;
         gap: 1em;
@@ -341,6 +359,10 @@
       nav li a {
         justify-content: center;
         white-space: nowrap;
+      }
+
+      .hero-text {
+        max-width: 50vw;
       }
     }
     @layer utilities {
