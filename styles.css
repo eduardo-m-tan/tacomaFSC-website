@@ -127,6 +127,7 @@
     width: 100%;
     background-color: var(--color-card);
     transition: max-height .5s ease;
+    z-index: 2;
   }
   nav li a {
     display: block;
