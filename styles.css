@@ -46,7 +46,7 @@
     min-width: 400px;
   }
   body {
-    background-color: var(--color-debug);
+    background-color: purple;
     font-family: 'Inter', 'Open Sans', 'Arial', sans-serif;
     line-height: var(--size-md);
     color: var(--color-primary);
@@ -266,10 +266,14 @@
   th, td {
     padding: var(--size-xs) 
   }
-  tr:nth-child(even),
-  thead {
+  thead th, thead td,
+  tr:nth-child(even) {
     background-color: var(--color-card);
   }
+  tr:nth-child(odd) {
+    background-color: var(--color-surface);
+  }
+  
 
   /* Form Styles */
   label {
@@ -303,9 +307,6 @@
   }
   .text-center {
     text-align: center;
-  }
-  .top-border {
-    border-top: 1px solid var(--color-primary);
   }
   .blur {
     backdrop-filter: blur(20px);
