@@ -34,13 +34,13 @@
     --color-surface2: #E6F2F8;
     --color-contrast: #A13131;
     /* Spacing scale was decided based on browser inspection */
-    --size-xxs: .5rem;
-    --size-xs: .75rem;
-    --size-sm: 1rem;
-    --size-md: 1.5rem;
-    --size-lg: 2rem;
-    --size-xl: 3rem;
-    --size-xxl: 4rem;
+    --size-2: .5rem;
+    --size-3: .75rem;
+    --size-4: 1rem;
+    --size-6: 1.5rem;
+    --size-8: 2rem;
+    --size-12: 3rem;
+    --size-16: 4rem;
   }
   html {
     min-width: 400px;
@@ -48,7 +48,7 @@
   body {
     background-color: paleturquoise; /* Color to check for improper spacing in main */
     font-family: 'Inter', 'Open Sans', 'Arial', sans-serif;
-    line-height: var(--size-md);
+    line-height: var(--size-6);
     color: var(--color-primary);
   }
   h2, h3 {
@@ -61,7 +61,7 @@
   }
   nav ul {
     list-style: none;
-    gap: var(--size-md);
+    gap: var(--size-6);
     padding: 0;
     margin: 0;
   }
@@ -70,7 +70,7 @@
     color: var(--color-primary);
   }
   footer {
-    padding: var(--size-md);
+    padding: var(--size-6);
     background-color: var(--color-primary);
     color: var(--color-surface);
   }
@@ -90,7 +90,7 @@
     position: relative;
   }
   main > section {
-    padding: var(--size-md);
+    padding: var(--size-6);
     background-color: var(--color-surface2);
   }
   main > section:nth-child(even) {
@@ -102,7 +102,9 @@
   .card-container {
     display: grid;
     grid-template-columns: 1fr;
-    gap: var(--size-md);
+    gap: var(--size-6);
+    container-type: inline-size;
+    container-name: card-container;
   }
 }
 
@@ -114,7 +116,7 @@
     background-repeat: no-repeat; 
     background-position: left;
     background-size: contain;
-    margin-left: var(--size-xs);
+    margin-left: var(--size-3);
     min-width: 35vw;
     min-height: 13vh;
   }
@@ -139,8 +141,8 @@
   }
   nav li a {
     display: block;
-    font-size: var(--size-sm);
-    padding: var(--size-sm) var(--size-xs);
+    font-size: var(--size-4);
+    padding: var(--size-4) var(--size-3);
     font-weight: bolder;
     color: var(--color-primary);
     transition: background-color .3s ease-in;
@@ -149,17 +151,17 @@
   nav label {
     cursor: pointer;
     display: inline-block;
-    padding: var(--size-sm);
+    padding: var(--size-4);
     user-select: none;
   }
   nav label span {
     background-color: var(--color-primary);
-    margin-right: var(--size-xxs);
+    margin-right: var(--size-2);
     display: block;
     height: .2rem;
     position: relative;
     transition: background-color .3s ease-out;
-    width: var(--size-lg);
+    width: var(--size-8);
   }
   nav label span:before, 
   nav label span:after {
@@ -172,7 +174,7 @@
     width: 100%;
   }
   nav label span:before {
-    top: var(--size-xxs);
+    top: var(--size-2);
   }
   nav label span:after {
     top: -.5rem;
@@ -199,7 +201,7 @@
 
   /* Hero Styles */
   .hero {
-    padding: var(--size-lg);
+    padding: var(--size-8);
     background: linear-gradient(var(--color-important), rgba(0, 0, 0, 0.5) 5%), url("images/placeholder-skating-img.jpg");
     background-repeat: no-repeat;
     background-position: center;
@@ -212,44 +214,44 @@
   }
   .hero-text {
     display: grid;
-    gap: var(--size-md);
+    gap: var(--size-6);
   }
   .hero-text h2 {
     color: var(--color-surface);
-    font-size: var(--size-lg);
+    font-size: var(--size-8);
   }
 
   /* Card styles */
   .card {
     background-color: var(--color-card);
-    border-radius: var(--size-md);
-    padding: var(--size-md);
+    border-radius: var(--size-6);
+    padding: var(--size-6);
     box-shadow: 4px 4px 4px gray;
     text-align: center;
   }
   .card img {
     max-height: 300px;
-    padding-top: var(--size-sm);
+    padding-top: var(--size-4);
   }
   .local-card {
-    margin-block: var(--size-md);
+    margin-block: var(--size-6);
   }
 
   /* Button Styles */
   button, .button {
     background-color: var(--color-primary);
-    font-size: var(--size-sm);
+    font-size: var(--size-4);
     border: none;
     color: var(--color-surface);
-    padding: var(--size-sm) var(--size-md);
-    border-radius: var(--size-xs);
+    padding: var(--size-4) var(--size-6);
+    border-radius: var(--size-3);
     cursor: pointer;
     white-space: nowrap;
     display: inline-block;
   }
   footer a {
     color: var(--color-surface2);
-    padding: var(--size-xxs);
+    padding: var(--size-2);
     border: 3px solid var(--color-surface2);
     border-radius: 10px;
   }
@@ -261,11 +263,11 @@
   table, th, td {
     border: 1px solid var(--color-important);
     border-collapse: collapse;
-    margin: var(--size-md) auto;
+    margin: var(--size-6) auto;
     table-layout: fixed;
   }
   th, td {
-    padding: var(--size-xs) 
+    padding: var(--size-3) 
   }
   thead th, thead td,
   tr:nth-child(even) {
@@ -279,13 +281,13 @@
   /* Form Styles */
   label {
     display: block;
-    margin-bottom: var(--size-xxs);
+    margin-bottom: var(--size-2);
   }
   input[type=text],
   input[type=email],
   textarea {
     box-sizing: border-box;
-    padding: var(--size-xs);
+    padding: var(--size-3);
     width: 100%;
     border: 2px solid var(--color-important)
   }
@@ -354,6 +356,15 @@
 }
 
 @layer queries {
+  @container card-container (width > 40rem) {
+    section {
+      display: grid;
+      grid-template-columns: 30% 1fr;
+        gap: var(--size-6);
+        place-items: center;
+    }
+  }
+
   /* Media query for tablet */
   @media screen and (min-width: 768px) {
     @layer base {
@@ -361,23 +372,14 @@
         margin: 0 auto;
         max-width: 95%;
       }
-      .card-container {
-        grid-template-columns: 1fr 1fr;
-      }
     }
     @layer components {
       #logo {
         background-image: url('images/logo/TacomaFSC_logo_Extended\ Logo.svg');
       }
       .hero-text {
-        padding: var(--size-md);
+        padding: var(--size-6);
         max-width: 75vw;
-      }
-      .local-card {
-        display: grid;
-        gap: var(--size-md);
-        grid-template-columns: 35% 1fr;
-        place-items: center;
       }
     }
     @layer utilities {
@@ -398,16 +400,11 @@
         margin: 0 auto;
         max-width: 85%;
       }
-      /*
-      .card-container {
-        grid-template-columns: 1fr 1fr;
-      }
-        */
     }
     @layer components {
       #logo {
         background-image: url('images/logo/TacomaFSC_logo_Logo\ Banner.svg');
-        margin-left: var(--size-md);
+        margin-left: var(--size-6);
       }
       /* Styles to expand navigation */
       nav label span, 
@@ -420,7 +417,7 @@
         display: grid;
         grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
         top: 25%;
-        right: var(--size-sm);
+        right: var(--size-4);
         align-items: center;
         gap: 1em;
         max-width: 55vw;
