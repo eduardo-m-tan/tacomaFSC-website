@@ -31,7 +31,7 @@
     --color-primary: #29264c;
     --color-card: #E5E5E5;
     --color-surface: #FEFEFE;
-    --color-debug: #ccffff;
+    --color-surface2: #E6F2F8;
     --color-contrast: #A13131;
     /* Spacing scale was decided based on browser inspection */
     --size-xxs: .5rem;
@@ -71,7 +71,8 @@
   }
   footer {
     padding: var(--size-md);
-    background-color: var(--color-surface);
+    background-color: var(--color-primary);
+    color: var(--color-surface);
   }
   img,
   svg {
@@ -91,6 +92,9 @@
   main > section {
     padding: var(--size-md);
     background-color: var(--color-surface);
+  }
+  main > section:nth-child(even) {
+    background-color: var(--color-surface2);
   }
   .container {
     max-width: 100%;
@@ -242,6 +246,12 @@
     white-space: nowrap;
     display: inline-block;
   }
+  footer a {
+    color: var(--color-surface2);
+    padding: var(--size-xxs);
+    border: 3px solid var(--color-surface2);
+    border-radius: 10px;
+  }
 
   /* Table Styles */
   .table-container {
@@ -264,6 +274,7 @@
   /* Form Styles */
   label {
     display: block;
+    margin-bottom: var(--size-xxs);
   }
   input[type=text],
   input[type=email],
@@ -318,13 +329,17 @@
     background-color: var(--color-primary);
     color: var(--color-surface);
   }
+  footer a:hover {
+    color: var(--color-surface2);
+  }
   .current-page {
     font-style: italic;
     font-weight: 500;
   }
   a:focus-visible, 
   button:focus-visible,
-  input:focus-visible {
+  input:focus-visible,
+  textarea:focus-visible {
     outline: 5px dashed var(--color-contrast);
     outline-offset: 3px;
     box-shadow: 0 0 0 5px var(--color-surface);
