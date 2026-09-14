@@ -356,7 +356,7 @@
 }
 
 @layer queries {
-  @container card-container (width > 40rem) {
+  @container card-container (width > 50rem) {
     section {
       display: grid;
       grid-template-columns: 30% 1fr;
@@ -364,7 +364,7 @@
         place-items: center;
     }
   }
-
+  
   /* Media query for tablet */
   @media screen and (min-width: 768px) {
     @layer base {
