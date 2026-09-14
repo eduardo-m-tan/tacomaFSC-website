@@ -29,7 +29,7 @@
     --color-heading: #3d669b;
     /* Color primary is used for text but also dark shades like shadows and borders */
     --color-primary: #29264c;
-    --color-card: #F5F5F5;
+    --color-card: #E5E5E5;
     --color-surface: #FEFEFE;
     --color-debug: #ccffff;
     --color-contrast: #A13131;
@@ -54,6 +54,9 @@
   h2, h3 {
     font-family: 'Montserrat', 'Helvetica', sans-serif;
     color: var(--color-heading);
+    margin: 0;
+  }
+  h4 {
     margin: 0;
   }
   nav ul {
@@ -85,7 +88,7 @@
     background-color: var(--color-surface);
     position: relative;
   }
-  body section {
+  main > section {
     padding: var(--size-md);
     background-color: var(--color-surface);
   }
@@ -207,7 +210,6 @@
     gap: var(--size-md);
   }
   .hero-text h2 {
-    padding-top: var(--size-sm);
     color: var(--color-surface);
     font-size: var(--size-lg);
   }
@@ -216,16 +218,19 @@
   .card {
     background-color: var(--color-card);
     border-radius: var(--size-md);
-    padding: var(--size-xs) var(--size-md);
+    padding: var(--size-md);
     box-shadow: 4px 4px 4px gray;
+    text-align: center;
   }
-  .card h3 {
-    padding-block: var(--size-sm);
-  }
-  .event-card img {
+  .card img {
     max-height: 300px;
+    padding-top: var(--size-sm);
+  }
+  .local-card {
+    margin-block: var(--size-md);
   }
 
+  /* Button Styles */
   button, .button {
     background-color: var(--color-primary);
     font-size: var(--size-sm);
@@ -235,7 +240,23 @@
     border-radius: var(--size-xs);
     cursor: pointer;
     white-space: nowrap;
+    display: inline-block;
   }
+
+  /* Table Styles */
+  .table-container {
+    overflow-x: auto;
+  }
+  table, th, td {
+    border: 1px solid var(--color-important);
+    border-collapse: collapse;
+    margin: var(--size-md) auto;
+    table-layout: fixed;
+  }
+  th, td {
+    padding: var(--size-xs) 
+  }
+
 }
 
 /* For small, single-purpose adjustments */
@@ -309,10 +330,15 @@
       #logo {
         background-image: url('images/logo/TacomaFSC_logo_Extended\ Logo.svg');
       }
-      
       .hero-text {
         padding: var(--size-md);
         max-width: 75vw;
+      }
+      .local-card {
+        display: grid;
+        gap: var(--size-md);
+        grid-template-columns: 35% 1fr;
+        place-items: center;
       }
     }
     @layer utilities {
@@ -333,9 +359,11 @@
         margin: 0 auto;
         max-width: 85%;
       }
+      /*
       .card-container {
         grid-template-columns: 1fr 1fr;
       }
+        */
     }
     @layer components {
       #logo {
@@ -373,7 +401,9 @@
 
     }
     @layer overrides {
-
+      #schedule div > p {
+        display: none;
+      }
     }
   }
 
@@ -395,7 +425,7 @@
 
     }
     @layer overrides {
-      
+
     }
   }
 
@@ -405,16 +435,23 @@
       nav, button, .button {
         display: none;
       }
+      html, body {
+        transform-origin: top left;
+        zoom: 80%;
+        width: 100%;
+        font-size: 10pt;
+      }
     }
     @layer components {
       #logo {
+        background-image: url('images/logo/TacomaFSC_logo_Extended\ Logo.svg');
         print-color-adjust: exact;
         -webkit-print-color-adjust: exact;
       }
       .hero,
-      .hero-text {
+      .hero-text > * {
         height: auto;
-        color: var(--color-primary)
+        color: var(--color-primary);
       }
       .card {
         box-shadow: none;
@@ -422,13 +459,20 @@
       }
     }
     @layer utilities {
-
+      .no-print {
+        display: none;
+      }
+      .landscape {
+        page: A4 landscape;
+      }
     }
     @layer states {
 
     }
     @layer overrides {
-
+      #schedule div > p {
+        display: none;
+      }
     }
   }
 }
