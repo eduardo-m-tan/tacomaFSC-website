@@ -46,7 +46,7 @@
     min-width: 400px;
   }
   body {
-    background-color: purple;
+    background-color: paleturquoise; /* Color to check for improper spacing in main */
     font-family: 'Inter', 'Open Sans', 'Arial', sans-serif;
     line-height: var(--size-md);
     color: var(--color-primary);
@@ -91,10 +91,10 @@
   }
   main > section {
     padding: var(--size-md);
-    background-color: var(--color-surface);
+    background-color: var(--color-surface2);
   }
   main > section:nth-child(even) {
-    background-color: var(--color-surface2);
+    background-color: var(--color-surface);
   }
   .container {
     max-width: 100%;
@@ -132,9 +132,10 @@
     text-align: center;
     max-height: 0;
     width: 100%;
-    background-color: var(--color-card);
+    background-color: var(--color-surface2);
     transition: max-height .5s ease;
     z-index: 2;
+    border-bottom: 3px solid var(--color-important);
   }
   nav li a {
     display: block;
@@ -423,6 +424,7 @@
         align-items: center;
         gap: 1em;
         max-width: 55vw;
+        border-bottom: none;
       }
       nav li a {
         justify-content: center;
