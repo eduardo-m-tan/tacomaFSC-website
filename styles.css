@@ -256,7 +256,27 @@
   th, td {
     padding: var(--size-xs) 
   }
+  tr:nth-child(even),
+  thead {
+    background-color: var(--color-card);
+  }
 
+  /* Form Styles */
+  label {
+    display: block;
+  }
+  input[type=text],
+  input[type=email],
+  textarea {
+    box-sizing: border-box;
+    padding: var(--size-xs);
+    width: 100%;
+    border: 2px solid var(--color-important)
+  }
+  input[type=submit] {
+    display: block;
+    justify-self: center;
+  }
 }
 
 /* For small, single-purpose adjustments */
@@ -288,7 +308,9 @@
 
 /* For state interactions, validation, or current-location styling */
 @layer states {
-  a:hover, button:hover {
+  a:hover, 
+  button:hover,
+  .button:hover {
     background-color: var(--color-important);
   }
   nav a:hover, 
