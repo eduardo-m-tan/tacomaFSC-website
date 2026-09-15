@@ -499,6 +499,7 @@
     *::before,
     *::after {
       animation-duration: .01ms;
+      transition-duration: .01ms;
       scroll-behavior: auto;
     }
   }
