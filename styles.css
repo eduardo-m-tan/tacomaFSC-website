@@ -29,11 +29,11 @@
     --color-heading: #3d669b;
     /* Color primary is used for text but also dark shades like shadows and borders */
     --color-primary: #29264c;
-    --color-card: #E5E5E5;
+    --color-card: #F8F9FA;
     --color-surface: #FEFEFE;
     --color-surface2: #E6F2F8;
     --color-contrast: #A13131;
-    /* Spacing scale was decided based on browser inspection */
+    /* Spacing scale was decided based on browser inspection, 1 = .25 */
     --size-2: .5rem;
     --size-3: .75rem;
     --size-4: 1rem;
@@ -61,7 +61,6 @@
   }
   nav ul {
     list-style: none;
-    gap: var(--size-6);
     padding: 0;
     margin: 0;
   }
@@ -96,15 +95,16 @@
   main > section:nth-child(even) {
     background-color: var(--color-surface);
   }
-  .container {
-    max-width: 100%;
+  .wrapper {
+    inline-size: min(100% - 2rem, 72rem);
+    margin-inline: auto;
   }
   .card-container {
     display: grid;
-    grid-template-columns: 1fr;
-    gap: var(--size-6);
-    container-type: inline-size;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 30rem), 1fr));
+    gap: clamp(var(--size-4), var(--size-6), var(--size-8));
     container-name: card-container;
+    container-type: inline-size;
   }
 }
 
@@ -116,15 +116,19 @@
     background-repeat: no-repeat; 
     background-position: left;
     background-size: contain;
-    margin-left: var(--size-3);
+    margin-inline-start: minmax(var(--size-3), var(--size-6));
     min-width: 35vw;
     min-height: 13vh;
+    container-name: logo-container;
+    container-type: inline-size;
   }
 
   /* Nav Hamburger Styles */
   nav {
     width: 100%;
     text-align: right;
+    container-name: nav-container;
+    container-type: inline-size;
   }
   nav ul {
     position: absolute;
@@ -137,16 +141,19 @@
     background-color: var(--color-surface2);
     transition: max-height .5s ease;
     z-index: 2;
-    border-bottom: 3px solid var(--color-important);
+    border-bottom: 1px solid var(--color-important);
   }
   nav li a {
     display: block;
-    font-size: var(--size-4);
+    font-size: minmax(var(--size-3), var(--size-4));
     padding: var(--size-4) var(--size-3);
     font-weight: bolder;
     color: var(--color-primary);
     transition: background-color .3s ease-in;
     border-top: 3px solid var(--color-important);
+  }
+  nav ul:last-child {
+    box-shadow: 0 10px 20px -1px var(--color-important);
   }
   nav label {
     cursor: pointer;
@@ -156,7 +163,7 @@
   }
   nav label span {
     background-color: var(--color-primary);
-    margin-right: var(--size-2);
+    margin-inline-end: var(--size-2);
     display: block;
     height: .2rem;
     position: relative;
@@ -201,12 +208,11 @@
 
   /* Hero Styles */
   .hero {
-    padding: var(--size-8);
     background: linear-gradient(var(--color-important), rgba(0, 0, 0, 0.5) 5%), url("images/placeholder-skating-img.jpg");
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
-    height: 85vh;
+    height: clamp(40vh, 85vh, 90vh);
     display: grid;
     place-items: center;
     overflow: hidden;
@@ -214,11 +220,12 @@
   }
   .hero-text {
     display: grid;
-    gap: var(--size-6);
+    gap: clamp(var(--size-2), 1vw, var(--size-6));
+    padding: clamp(var(--size-2), 4vw, var(--size-6));
   }
   .hero-text h2 {
     color: var(--color-surface);
-    font-size: var(--size-8);
+    font-size: clamp(var(--size-4), var(--size-6) + 1vw, var(--size-12));
   }
 
   /* Card styles */
@@ -226,15 +233,15 @@
     background-color: var(--color-card);
     border-radius: var(--size-6);
     padding: var(--size-6);
-    box-shadow: 4px 4px 4px gray;
+    box-shadow: rgba(0, 0, 0, 0.5) 4px 4px 8px;
     text-align: center;
+    display: grid;
+    grid-template-rows: subgrid;
+    grid-row: span 3;
   }
   .card img {
     max-height: 300px;
-    padding-top: var(--size-4);
-  }
-  .local-card {
-    margin-block: var(--size-6);
+    padding-block-start: var(--size-4);
   }
 
   /* Button Styles */
@@ -281,11 +288,11 @@
   /* Form Styles */
   label {
     display: block;
-    margin-bottom: var(--size-2);
   }
   input[type=text],
   input[type=email],
   textarea {
+    margin-block-start: var(--size-2);
     box-sizing: border-box;
     padding: var(--size-3);
     width: 100%;
@@ -323,18 +330,29 @@
 
 /* For state interactions, validation, or current-location styling */
 @layer states {
+  /* Animations, transitions, transformations */
+  .card {
+    transition: transform 0.5s, box-shadow 0.5s ease-in-out;
+  }
+  .card:hover {
+    transform: translate(-2px, -6px);
+    box-shadow: rgba(0, 0, 0, 0.5) 4px 6px 10px;
+  }
+  a:hover,
+  button,
+  .button {
+    transition: background-color 0.3s, color 0.3s ease-in-out;
+  }
   a:hover, 
   button:hover,
   .button:hover {
     background-color: var(--color-important);
+    color: var(--color-surface);
   }
   nav a:hover, 
   nav input:hover {
     background-color: var(--color-primary);
     color: var(--color-surface);
-  }
-  footer a:hover {
-    color: var(--color-surface2);
   }
   .current-page {
     font-style: italic;
@@ -352,83 +370,73 @@
 
 /* For intentional overrides that are intentional, layer should be minimal */
 @layer overrides {
-  
+  .inactive-button {
+    cursor: default;
+    opacity: 0.5;
+    pointer-events: none;
+  }
 }
 
 @layer queries {
-  @container card-container (width > 50rem) {
-    section {
-      display: grid;
-      grid-template-columns: 30% 1fr;
-        gap: var(--size-6);
-        place-items: center;
+  /* Container queries */ 
+  @container nav-container (width > 50rem) {
+    /* Styles to expand navigation */
+    nav label span, 
+    nav input {
+      display: none;
     }
-  }
+    nav ul {
+      overflow: visible;
+      position: absolute;
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+      gap: 1em;
+      top: 25%;
+      right: 15px;
+      align-items: center;
+      max-width: 60vw;
+      border-bottom: none;
+    }
+    nav li a {
+      justify-content: center;
+      white-space: nowrap;
+    }
+  } 
   
-  /* Media query for tablet */
-  @media screen and (min-width: 768px) {
+  /* Media query for tablet ~ 768px */
+  @media screen and (min-width: 48rem) {
     @layer base {
-      .container {
-        margin: 0 auto;
-        max-width: 95%;
+      .wrapper {
+        inline-size: min(100% - 4rem, 72rem);
       }
     }
     @layer components {
       #logo {
         background-image: url('images/logo/TacomaFSC_logo_Extended\ Logo.svg');
       }
-      .hero-text {
-        padding: var(--size-6);
-        max-width: 75vw;
-      }
     }
     @layer utilities {
 
     }
     @layer states {
-
+      
     }
     @layer overrides {
 
     }
   }
 
-  /* Media query for laptop sizes */
-  @media screen and (min-width: 1024px) {
+  /* Media query for laptop sizes ~ 1024px */
+  @media screen and (min-width: 64rem) {
     @layer base {
-      .container {
-        margin: 0 auto;
-        max-width: 85%;
+      .wrapper {
+        inline-size: min(100% - 6rem, 72rem);
       }
     }
     @layer components {
       #logo {
         background-image: url('images/logo/TacomaFSC_logo_Logo\ Banner.svg');
-        margin-left: var(--size-6);
-      }
-      /* Styles to expand navigation */
-      nav label span, 
-      nav input {
-        display: none;
-      }
-      nav ul {
-        overflow: visible;
-        position: absolute;
-        display: grid;
-        grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-        top: 25%;
-        right: var(--size-4);
-        align-items: center;
-        gap: 1em;
-        max-width: 55vw;
-        border-bottom: none;
-      }
-      nav li a {
-        justify-content: center;
-        white-space: nowrap;
-      }
-      .hero-text {
-        max-width: 50vw;
+        margin-inline-start: var(--size-6);
       }
     }
     @layer utilities {
@@ -444,16 +452,35 @@
     }
   }
 
-  /* Media query for desktop sizes */
-  @media screen and (min-width: 1440px) {
+  /* Media query for wide desktop sizes ~ 1440px */
+  @media screen and (min-width: 90rem) {
     @layer base {
-      .container {
-        margin: 0 auto;
-        max-width: 75%;
-      }
+
     }
     @layer components { 
-      
+      @supports not (container-type: inline-size) {
+        /* Styles to expand navigation */
+        nav label span, 
+        nav input {
+          display: none;
+        }
+        nav ul {
+          overflow: visible;
+          position: absolute;
+          display: grid;
+          grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+          gap: 1em;
+          top: 25%;
+          right: 15px;
+          align-items: center;
+          max-width: 60vw;
+          border-bottom: none;
+        }
+        nav li a {
+          justify-content: center;
+          white-space: nowrap;
+        }
+      }
     }
     @layer utilities {
 
@@ -466,6 +493,15 @@
     }
   }
 
+  /* Media query for reduced motion preference */
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      animation-duration: .01ms;
+      scroll-behavior: auto;
+    }
+  }
   /* Media query for print styles */
   @media print {
     @layer base {
