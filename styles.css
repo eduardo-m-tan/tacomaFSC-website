@@ -4,7 +4,7 @@
 
 /* Import Google Fonts */
 
-@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
 
 @layer reset {
   *,
@@ -52,7 +52,7 @@
     color: var(--color-primary);
   }
   h2, h3 {
-    font-family: 'Montserrat', 'Helvetica', sans-serif;
+    font-family: 'Montserrat', 'Helvetica', 'Arial', sans-serif;
     color: var(--color-heading);
     margin: 0;
   }
@@ -101,10 +101,8 @@
   }
   .card-container {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(min(100%, 30rem), 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 22rem), 1fr));
     gap: clamp(var(--size-4), var(--size-6), var(--size-8));
-    container-name: card-container;
-    container-type: inline-size;
   }
 }
 
@@ -119,8 +117,6 @@
     margin-inline-start: minmax(var(--size-3), var(--size-6));
     min-width: 35vw;
     min-height: 13vh;
-    container-name: logo-container;
-    container-type: inline-size;
   }
 
   /* Nav Hamburger Styles */

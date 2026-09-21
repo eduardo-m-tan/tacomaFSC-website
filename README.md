@@ -15,6 +15,7 @@ The purpose of this website is to provide information that figure skaters would 
 - Schedule is dependent on primary (external) rink website
 - Skating director has necessary information
 - Gather photos of general areas:
+    - Front desk
     - Both sheets of ice
     - Entrance
     - Parking lot (visibility of accessible spots)
