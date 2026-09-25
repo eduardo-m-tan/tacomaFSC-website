@@ -74,8 +74,18 @@
     color: var(--color-surface);
   }
   img,
-  svg {
+  svg,
+  video {
     max-width: 100%;
+    display: block;
+    box-sizing: border-box;
+    height: auto;
+  }
+  video {
+    margin-inline: auto;
+  }
+  img {
+    border-radius: 10px;
   }
 }
 
@@ -87,6 +97,10 @@
     align-items: center;
     background-color: var(--color-surface);
     position: relative;
+  }
+  nav {
+    container-name: nav-container;
+    container-type: inline-size;
   }
   main > section {
     padding: var(--size-6);
@@ -123,8 +137,6 @@
   nav {
     width: 100%;
     text-align: right;
-    container-name: nav-container;
-    container-type: inline-size;
   }
   nav ul {
     position: absolute;
@@ -148,8 +160,8 @@
     transition: background-color .3s ease-in;
     border-top: 3px solid var(--color-important);
   }
-  nav ul:last-child {
-    box-shadow: 0 10px 20px -1px var(--color-important);
+  nav ul:last-child, header {
+    box-shadow: 0 20px 20px 0px var(--color-important);
   }
   nav label {
     cursor: pointer;
@@ -202,9 +214,30 @@
     top: 0;
   } 
 
+  /* Button Styles */
+  button, .button {
+    background-color: var(--color-primary);
+    font-size: var(--size-4);
+    border: none;
+    color: var(--color-surface);
+    padding: var(--size-4) var(--size-6);
+    border-radius: var(--size-3);
+    cursor: pointer;
+    white-space: nowrap;
+    display: block;
+    justify-self: center;
+  }
+  footer a {
+    color: var(--color-surface2);
+    padding: var(--size-2);
+    border: 3px solid var(--color-surface2);
+    border-radius: 10px;
+  }
+
+
   /* Hero Styles */
   .hero {
-    background: linear-gradient(var(--color-important), rgba(0, 0, 0, 0.5) 5%), url("images/placeholder-skating-img.jpg");
+    background: linear-gradient(var(--color-important), rgba(0, 0, 0, 0.5) 0%), url("images/hero-image/hero-image-2560px.png");
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
@@ -223,6 +256,9 @@
     color: var(--color-surface);
     font-size: clamp(var(--size-4), var(--size-6) + 1vw, var(--size-12));
   }
+  .hero .button {
+    display: inline-block;
+  }
 
   /* Card styles */
   .card {
@@ -237,26 +273,8 @@
   }
   .card img {
     max-height: 300px;
-    padding-block-start: var(--size-4);
-  }
-
-  /* Button Styles */
-  button, .button {
-    background-color: var(--color-primary);
-    font-size: var(--size-4);
-    border: none;
-    color: var(--color-surface);
-    padding: var(--size-4) var(--size-6);
-    border-radius: var(--size-3);
-    cursor: pointer;
-    white-space: nowrap;
+    margin-block-start: var(--size-2);
     display: inline-block;
-  }
-  footer a {
-    color: var(--color-surface2);
-    padding: var(--size-2);
-    border: 3px solid var(--color-surface2);
-    border-radius: 10px;
   }
 
   /* Table Styles */
@@ -268,6 +286,7 @@
     border-collapse: collapse;
     margin: var(--size-6) auto;
     table-layout: fixed;
+    text-align: center;
   }
   th, td {
     padding: var(--size-3) 
@@ -315,12 +334,18 @@
     text-align: center;
   }
   .blur {
-    backdrop-filter: blur(20px);
+    backdrop-filter: blur(10px);
     border-radius: 20px;
   }
   /* Modification Class to Shorten Hero */
   .bannerModification {
     height: 20vh;
+  }
+  .column-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 25rem), 1fr));
+    gap: clamp(var(--size-4), var(--size-6), var(--size-8));
+    place-items: center;
   }
 }
 
@@ -339,6 +364,7 @@
   .button {
     transition: background-color 0.3s, color 0.3s ease-in-out;
   }
+  /* State interactions */
   a:hover, 
   button:hover,
   .button:hover {
@@ -403,7 +429,7 @@
   @media screen and (min-width: 48rem) {
     @layer base {
       .wrapper {
-        inline-size: min(100% - 4rem, 72rem);
+        inline-size: min(100% - 4rem, 80rem);
       }
     }
     @layer components {
@@ -426,7 +452,7 @@
   @media screen and (min-width: 64rem) {
     @layer base {
       .wrapper {
-        inline-size: min(100% - 6rem, 72rem);
+        inline-size: min(100% - 6rem, 90rem);
       }
     }
     @layer components {
@@ -497,6 +523,9 @@
       animation-duration: .01ms;
       transition-duration: .01ms;
       scroll-behavior: auto;
+    }
+    video {
+      
     }
   }
   /* Media query for print styles */

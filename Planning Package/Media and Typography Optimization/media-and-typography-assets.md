@@ -33,7 +33,7 @@
         - Expected Display Size: Max of 300px wide, potential need for 2x, 3x compatibility
         - Alt text: "Poster for the Holiday Tradition on Ice Event"
         - Further alt description not necessary as the card the image lays on has the rest of the information needed
-- PENDING IMPLEMENTATION: Learn-To-Skate Image
+- Learn-To-Skate Image
     - Image showing young skaters learning from an instructor
     - Source: unsplash, https://unsplash.com/photos/2-children-in-red-jacket-and-black-pants-playing-ice-hockey-mNLTL_8IU3g https://unsplash.com/@shklyaevmax 
     - Free/open licensing
