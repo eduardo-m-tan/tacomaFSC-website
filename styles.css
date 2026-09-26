@@ -22,43 +22,77 @@
 
 /* For element defaults and global rhythm */
 @layer base {
-    /* Define color palette and spacing scale */
   :root {
-    /* Colors based on logo, components, and later plans */
+
+    /* Color variables */
     --color-important: #378FDC;
     --color-heading: #3d669b;
-    /* Color primary is used for text but also dark shades like shadows and borders */
     --color-primary: #29264c;
     --color-card: #F8F9FA;
     --color-surface: #FEFEFE;
     --color-surface2: #E6F2F8;
     --color-contrast: #A13131;
-    /* Spacing scale was decided based on browser inspection, 1 = .25 */
-    --size-2: .5rem;
-    --size-3: .75rem;
-    --size-4: 1rem;
-    --size-6: 1.5rem;
-    --size-8: 2rem;
-    --size-12: 3rem;
-    --size-16: 4rem;
+
+    /* Spacing Scale - decided via browser inspection */
+    --space-1: clamp(0.25rem, 0.2rem + 0.1vw, 0.375rem);
+    --space-2: clamp(0.5rem, 0.4rem + 0.2vw, 0.75rem);
+    --space-3: clamp(0.75rem, 0.6rem + 0.3vw, 1rem);
+    --space-4-base: clamp(1rem, 0.8rem + 0.4vw, 1.5rem);
+    --space-6: clamp(1.5rem, 1.1rem + 0.8vw, 2rem);
+    --space-8: clamp(2rem, 1.5rem + 1vw, 3rem);
+    --space-12: clamp(3rem, 2rem + 2vw, 4rem);
+    --space-16: clamp(4rem, 3rem + 3vw, 6rem);
+
+    /* Line height/length variables */
+
+    --lineHeight-heading: 1.25;
+    --lineHeight-base: 1.5;
+
+    /* Font Stacks */
+    --font-body: 'Inter', 'Open Sans', 'Arial', sans-serif;
+    --font-heading: 'Montserrat', 'Helvetica', 'Arial', sans-serif;
+
+    /* Type Scale - decided via browser inspection */
+    --text-xs: clamp(0.75rem, 0.72rem + 0.1vw, 0.875rem);
+    --text-sm: clamp(0.875, 0.84rem + 0.15vw, 1rem);
+    --text-md-base: clamp(1rem, 0.95rem + 0.25vw, 1.125rem);
+    --text-lg: clamp(1.125rem, 1rem + 0.5vw, 1.375rem);
+    --text-xl: clamp(1.25rem, 1rem + 0.8vw, 1.5rem);
+    --text-2xl: clamp(1.5rem, 1.2rem + 1.3vw, 2rem);
+    --text-3xl: clamp(1.75rem, 1.4rem + 1.5vw, 2.5rem);
   }
   html {
     min-width: 400px;
   }
   body {
     background-color: paleturquoise; /* Color to check for improper spacing in main */
-    font-family: 'Inter', 'Open Sans', 'Arial', sans-serif;
-    line-height: var(--size-6);
+    font-family: var(--font-body);
+    line-height: var(--lineHeight-base);
     color: var(--color-primary);
   }
-  h2, h3 {
-    font-family: 'Montserrat', 'Helvetica', 'Arial', sans-serif;
-    color: var(--color-heading);
-    margin: 0;
+
+  /* Heading Styles */
+  h2 {
+    font-size: var(--text-2xl);
+  }
+  h3 {
+    font-size: var(--text-xl);
   }
   h4 {
+    font-size: var(--text-md-base);
+  }
+  h2, h3 {
+    color: var(--color-heading);
+  }
+  h2, h3, h4 {
+    font-family: var(--font-heading);
+    line-height: var(--lineHeight-heading);
     margin: 0;
   }
+  p {
+    margin-block: var(--space-4-base);
+  }
+
   nav ul {
     list-style: none;
     padding: 0;
@@ -69,7 +103,7 @@
     color: var(--color-primary);
   }
   footer {
-    padding: var(--size-6);
+    padding: var(--space-6);
     background-color: var(--color-primary);
     color: var(--color-surface);
   }
@@ -103,7 +137,7 @@
     container-type: inline-size;
   }
   main > section {
-    padding: var(--size-6);
+    padding: var(--space-6);
     background-color: var(--color-surface2);
   }
   main > section:nth-child(even) {
@@ -116,7 +150,7 @@
   .card-container {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(min(100%, 22rem), 1fr));
-    gap: clamp(var(--size-4), var(--size-6), var(--size-8));
+    gap: var(--space-6);
   }
 }
 
@@ -128,7 +162,7 @@
     background-repeat: no-repeat; 
     background-position: left;
     background-size: contain;
-    margin-inline-start: minmax(var(--size-3), var(--size-6));
+    margin-inline-start: var(--space-4-base);
     min-width: 35vw;
     min-height: 13vh;
   }
@@ -153,8 +187,8 @@
   }
   nav li a {
     display: block;
-    font-size: minmax(var(--size-3), var(--size-4));
-    padding: var(--size-4) var(--size-3);
+    font-size: var(--text-sm);
+    padding: var(--space-4-base) var(--space-3);
     font-weight: bolder;
     color: var(--color-primary);
     transition: background-color .3s ease-in;
@@ -166,17 +200,17 @@
   nav label {
     cursor: pointer;
     display: inline-block;
-    padding: var(--size-4);
+    padding: var(--space-4-base);
     user-select: none;
   }
   nav label span {
     background-color: var(--color-primary);
-    margin-inline-end: var(--size-2);
+    margin-inline-end: var(--space-2);
     display: block;
     height: .2rem;
     position: relative;
     transition: background-color .3s ease-out;
-    width: var(--size-8);
+    width: var(--space-8);
   }
   nav label span:before, 
   nav label span:after {
@@ -189,7 +223,7 @@
     width: 100%;
   }
   nav label span:before {
-    top: var(--size-2);
+    top: var(--space-2);
   }
   nav label span:after {
     top: -.5rem;
@@ -217,11 +251,11 @@
   /* Button Styles */
   button, .button {
     background-color: var(--color-primary);
-    font-size: var(--size-4);
+    font-size: var(--text-md-base);
     border: none;
     color: var(--color-surface);
-    padding: var(--size-4) var(--size-6);
-    border-radius: var(--size-3);
+    padding: var(--space-4-base) var(--space-6);
+    border-radius: var(--space-3);
     cursor: pointer;
     white-space: nowrap;
     display: block;
@@ -229,7 +263,7 @@
   }
   footer a {
     color: var(--color-surface2);
-    padding: var(--size-2);
+    padding: var(--space-2);
     border: 3px solid var(--color-surface2);
     border-radius: 10px;
   }
@@ -249,12 +283,13 @@
   }
   .hero-text {
     display: grid;
-    gap: clamp(var(--size-2), 1vw, var(--size-6));
-    padding: clamp(var(--size-2), 4vw, var(--size-6));
+    gap: var(--space-3);
+    padding: var(--space-3);
+    max-inline-size: 100ch;
   }
   .hero-text h2 {
     color: var(--color-surface);
-    font-size: clamp(var(--size-4), var(--size-6) + 1vw, var(--size-12));
+    font-size: var(--text-3xl);
   }
   .hero .button {
     display: inline-block;
@@ -263,8 +298,8 @@
   /* Card styles */
   .card {
     background-color: var(--color-card);
-    border-radius: var(--size-6);
-    padding: var(--size-6);
+    border-radius: var(--space-6);
+    padding: var(--space-6);
     box-shadow: rgba(0, 0, 0, 0.5) 4px 4px 8px;
     text-align: center;
     display: grid;
@@ -273,7 +308,7 @@
   }
   .card img {
     max-height: 300px;
-    margin-block-start: var(--size-2);
+    margin-block-start: var(--space-2);
     display: inline-block;
   }
 
@@ -284,12 +319,12 @@
   table, th, td {
     border: 1px solid var(--color-important);
     border-collapse: collapse;
-    margin: var(--size-6) auto;
+    margin: var(--space-6) auto;
     table-layout: fixed;
     text-align: center;
   }
   th, td {
-    padding: var(--size-3) 
+    padding: var(--space-3) 
   }
   thead th, thead td,
   tr:nth-child(even) {
@@ -307,9 +342,9 @@
   input[type=text],
   input[type=email],
   textarea {
-    margin-block-start: var(--size-2);
+    margin-block-start: var(--space-2);
     box-sizing: border-box;
-    padding: var(--size-3);
+    padding: var(--space-3);
     width: 100%;
     border: 2px solid var(--color-important)
   }
@@ -344,7 +379,7 @@
   .column-content {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(min(100%, 25rem), 1fr));
-    gap: clamp(var(--size-4), var(--size-6), var(--size-8));
+    gap: var(--space-6);
     place-items: center;
   }
 }
@@ -412,7 +447,7 @@
       position: absolute;
       display: grid;
       grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
-      gap: 1em;
+      gap: var(--space-3);
       top: 25%;
       right: 15px;
       align-items: center;
@@ -458,7 +493,7 @@
     @layer components {
       #logo {
         background-image: url('images/logo/TacomaFSC_logo_Logo\ Banner.svg');
-        margin-inline-start: var(--size-6);
+        margin-inline-start: var(--space-6);
       }
     }
     @layer utilities {
@@ -523,9 +558,6 @@
       animation-duration: .01ms;
       transition-duration: .01ms;
       scroll-behavior: auto;
-    }
-    video {
-      
     }
   }
   /* Media query for print styles */
