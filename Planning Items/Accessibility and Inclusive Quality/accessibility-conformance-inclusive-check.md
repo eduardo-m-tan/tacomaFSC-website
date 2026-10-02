@@ -14,13 +14,13 @@ Condition(s): utilizing WAVE tool, axe DevTools, and Chrome DevTools
 - WAVE tool identifies the structure looks correct for all three pages, landmarks are identifiable and headings are structured properly
 - Native HTMl items are used primarily to allow for screen reader accessibility
 - Page titles are relevant to page purpose, each using the format "Tacoma Figure Skating Club | *current page*"
-- Links and buttons all have relevant associated text, no confusion present
+- Links and buttons all have relevant associated text, no confusion present, navigation presents issue with custom dropdown, need to add second span to assist
 
 ## Keyboard and focus:
 Condition(s): utilizing WAVE tool, Chrome DevTools, standard desktop view on Chrome
 - WAVE tool displays keyboard navigation access/focus order to be logical, cycling through the navigation links and then buttons/links in logical order on the page
 - Focus-visible has two layers allowing for visibility/accessibility on any background, maroon/white for contrast
-- Skip needs to be implemented, currently there is no extra class to accommodate for that
+- Skip could be implemented, currently there is no extra class to accommodate for that
 - No keyboard traps, keyboard tabbing is continuous
 
 ## Zoom, reflow, text spacing, and contrast:
@@ -29,7 +29,7 @@ Condition(s): Zoom at 200% and narrow viewport using Chrome DevTools, Galaxy S20
 - Reflow and text spacing is responsive, all text is readable and there are no present issues
 - High contrast is available for state classes used on all link/form fields
 
-## Forms and tables: labels, instructions, errors, required states, captions, headers, scope, and responsive table strategies are checked where applicable.
+## Forms and tables: 
 Condition: Standard desktop viewport on Chrome, only checking on contact.html page since no tables or forms are present on the other two pages
 - Labels are present, relevant, and attached on the form
 - Instructions should be specified better, placeholder text should be added
@@ -52,7 +52,7 @@ Condition(s): Standard desktop viewport on Chrome, WAVE accessibility tool
 Conditions(s): axe DevTools v4.138.0, standard desktop viewport on Chrome
 - axe DevTools:
     - Identified one color contrast issue with the inactive button on the home page, not urgent since the button is not needed but will reduce opacity to allow for better contrast
-    - No other issues identified on all three pages
+    - Only other issue identified was the navigation menu toggle not being identifiable by screen readers, second span will be added to accommodate
 - Manual keyboard navigation:
     - All links are reachable via keyboard navigation, visually identifiable with the double layer focus-visible border
 - Zoom/reflow check: all items usable and readable, no horizontal scrolling present
@@ -63,10 +63,20 @@ Conditions(s): axe DevTools v4.138.0, standard desktop viewport on Chrome
 - Screen reader was utilized and all information seems to be listenable
 - Hard to identify what could be missed when I am trying to catch all items but may not, accessible users may be wanted for proper testing of these tools
 
-## Remediation log: document at least five findings with issue, evidence, impact, priority, fix, and retest result.
-
+## Remediation log: 
+- Nav menu toggle needs screen reader usability, tested with automated checkers, impact is for screen reader users, priority: high
+    - Fix: Added a second span with relevant text to the label using visually-hidden so it is not visible, standard functionality and readability is maintained
+- Required fields for the form do not have a visual indicator on screen that they are required, checked by browser inspection, impact is for all users, priority: high
+    - Fix: Add an asterisk indicated for required fields and add it to the top
+- No placeholder text is present in the forms, checked via browser inspection, impact is for all seeing users, priority: low-medium
+    - Fix: Add placeholder text to give guidance on what to fill in the form
+- Color contrast issue on home page for inactive button, tested with axe DevTools, impact is for low visibility users, priority: medium-high
+    - Fix: Reduced opacity on the inactive button
+- Required fields on form do not have aria-required attribute, tested with WAVE tool, impact is for screen reader users, priority: high
+    - Fix: add aria-required labels for all form fields
 
 ## Conformance summary: summarize what appears to conform, what was fixed, what remains limited, and what should be checked again before final release.
-
+- Most of the pages seem to conform aside from the items fixed above: nav menu toggle given extra text for screen readers, required fields and placeholder text improved for forms, color contrast fixed for inactive buttons. Limited release currently for current-page items, skipping for keyboard navigation would be preferred and is pending implementation. More images could be added later on, all images will need to be checked prior to final release.
 
 ## AI disclosure: if used, document purpose, output considered, verification, and what changed.
+- This assignment was completed independently without the assistance of any generative or assistive AI.

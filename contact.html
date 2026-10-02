@@ -38,22 +38,23 @@
             <section>
                 <div class="wrapper">
                     <h2>Have a question? Fill out the form below!</h2>
+                    <p>Asterisk* indicates a required field</p>
                     <form action="" method="get" class="contact-form">
                         <p>
-                            <label for="fullName">Full Name:</label>
-                            <input type="text" pattern="[A-Za-z]+" name="fullName" id="fullName" required>
+                            <label for="fullName">Full Name:*</label>
+                            <input type="text" pattern="[A-Za-z]+" name="fullName" id="fullName" required aria-required="true" placeholder="e.g. Ulrich Salchow">
                         </p>
                         <p>
-                            <label for="email">Email Address:</label>
-                            <input type="email" name="email" id="email" required>
+                            <label for="email">Email Address:*</label>
+                            <input type="email" name="email" id="email" required aria-required="true" placeholder="e.g. ulrich.salchow@example.com">
                         </p>
                         <p>
                             <label for="subject">Topic of Interest:</label>
-                            <input type="text" name="subject" id="subject">
+                            <input type="text" name="subject" id="subject" placeholder="e.g. Private Lessons">
                         </p>
                         <p>
-                            <label for="details">How can we help you?</label>
-                            <textarea id="details" rows="4" name="details" required></textarea>
+                            <label for="details">How can we help you?*</label>
+                            <textarea id="details" rows="4" name="details" required aria-required="true" placeholder="Please provide as much detail as possible..."></textarea>
                         </p>
                         <p>
                             <input class="button" type="submit" value="Submit">
