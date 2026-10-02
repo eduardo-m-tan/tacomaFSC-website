@@ -13,7 +13,11 @@
             <nav>
                 <h2 class="visually-hidden">Main Navigation</h2>
                 <input type="checkbox" id="menu-toggle">
-                <label for="menu-toggle" ><span class="visually-hidden">menu-toggle</span><span></span></label>
+                <label for="menu-toggle">
+                    <span></span>
+                    <!-- Added in to allow screen readers to read the label, if needed -->
+                    <span class="visually-hidden">Navigation Menu Toggle</span>
+                </label>
                 <ul>
                     <li><a href="index.html" class="current-page">Home</a></li>
                     <li><a href="group-classes.html">Group Classes</a></li>
@@ -43,6 +47,7 @@
                     </p>
                 </div>
             </section>
+
             <section id="about">
                 <div class="wrapper column-content">
                     <div>
@@ -81,6 +86,7 @@
                     </div>
                 </div>
             </section>
+
             <section id="upcoming-events">
                 <div class="wrapper">
                     <h2>Upcoming Events</h2>
@@ -98,7 +104,7 @@
                                         images/rink-event-posters/costume-party-poster@2x.webp 2x, 
                                         images/rink-event-posters/costume-party-poster@3x.webp 3x" 
                                 alt="Poster for the Costume Showcase Party on Ice Event">
-                                <h4>When: October 30th at 6:15 P.M.</h4>
+                                <p class="emphasize">When: October 30th at 6:15 P.M.</p>
                             </div>
                             <div class="description">
                                 <p>
@@ -120,7 +126,7 @@
                                         images/rink-event-posters/holiday-on-ice-show@2x.webp 2x, 
                                         images/rink-event-posters/holiday-on-ice-show@3x.webp 3x"
                                 alt="Poster for the Holiday Tradition on Ice Event">
-                                <h4>When: December 20th at 6:15 P.M.</h4>
+                                <p class="emphasize">When: December 20th at 6:15 P.M.</p>
                             </div>
                             <div class="description">
                                 <p>
@@ -136,6 +142,7 @@
                     </div>
                 </div>
             </section>
+
             <section id="visiting information">
                 <!--div class="column-content"-->
                     <div id="visit-info" class="wrapper" >
