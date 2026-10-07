@@ -23,7 +23,6 @@
 /* For element defaults and global rhythm */
 @layer base {
   :root {
-
     /* Color variables */
     --color-important: #378FDC;
     --color-heading: #3d669b;
@@ -151,6 +150,7 @@
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(min(100%, 22rem), 1fr));
     gap: var(--space-6);
+    margin-block-start: var(--space-6);
   }
 }
 
@@ -258,8 +258,9 @@
     border-radius: var(--space-3);
     cursor: pointer;
     white-space: nowrap;
-    display: block;
+    display: inline-block;
     justify-self: center;
+    margin: var(--space-3);
   }
   footer a {
     color: var(--color-surface2);
@@ -372,6 +373,9 @@
     backdrop-filter: blur(10px);
     border-radius: 20px;
   }
+  .limit-width {
+    max-inline-size: 90ch;
+  }
   /* Modification Class to Shorten Hero */
   .bannerModification {
     height: 20vh;
@@ -478,7 +482,9 @@
       }
     }
     @layer utilities {
-
+      .hide-on-desktop {
+        display: none;
+      }
     }
     @layer states {
       
@@ -508,9 +514,7 @@
 
     }
     @layer overrides {
-      #schedule div > p {
-        display: none;
-      }
+      
     }
   }
 
