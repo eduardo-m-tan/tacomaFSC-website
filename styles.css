@@ -158,7 +158,7 @@
 @layer components {
   /* Logo component */
   #logo {
-    background-image: url('images/logo/TacomaFSC_logo_Default\ Logo.svg');
+    background-image: url('images/logo/TacomaFSC_logo_Default-Logo.svg');
     background-repeat: no-repeat; 
     background-position: left;
     background-size: contain;
@@ -478,7 +478,7 @@
     }
     @layer components {
       #logo {
-        background-image: url('images/logo/TacomaFSC_logo_Extended\ Logo.svg');
+        background-image: url('images/logo/TacomaFSC_logo_Extended-Logo.svg');
       }
     }
     @layer utilities {
@@ -503,7 +503,7 @@
     }
     @layer components {
       #logo {
-        background-image: url('images/logo/TacomaFSC_logo_Logo\ Banner.svg');
+        background-image: url('images/logo/TacomaFSC_logo_Banner.svg');
         margin-inline-start: var(--space-6);
       }
     }
@@ -584,7 +584,7 @@
     }
     @layer components {
       #logo {
-        background-image: url('images/logo/TacomaFSC_logo_Extended\ Logo.svg');
+        background-image: url('images/logo/TacomaFSC_logo_Extended-Logo.svg');
         print-color-adjust: exact;
         -webkit-print-color-adjust: exact;
       }
