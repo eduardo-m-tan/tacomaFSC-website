@@ -8,8 +8,8 @@
     - Source: unsplash, https://unsplash.com/photos/a-group-of-people-skating-on-an-ice-rink-923mxIxfbns https://unsplash.com/@nktalya 
     - Free/open licensing 
     - Original Format: JPG
-    - Current Format: PNG
-    - File dimensions: 2560px * 1440px
+    - Current Format: WEBP
+    - File dimensions: 1440px wide
     - Expected display size: Full viewport width
     - No alt text needed for decorative background graphic
 - Upcoming Events Posters
@@ -43,19 +43,37 @@
     - Expected Display Size: Max of 1200px wide
     - Alt text: "Image of young skaters learning to skate from an ice skating instructor"
     - Further alt description not necessary as image is mostly decoration.
-- Coaching Images (PENDING Images):
-    - Image of each coach for coach cards
-    - Source: PENDING from Coach
-    - Permission: PENDING from Coach
-    - Format: PENDING
-    - Expected Display: Max of 300px wide for cards
-    - Alt text: "Image of Coach PLACEHOLDER"
-
-Photo by <a href="https://unsplash.com/@desiraygreen?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Desiray Green</a> on <a href="https://unsplash.com/photos/a-young-female-figure-skater-performs-on-ice-YFWqyOENE2o?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
-
-Photo by <a href="https://unsplash.com/@josephcosta?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Joseph Costa</a> on <a href="https://unsplash.com/photos/woman-performing-on-ice-skate-field-OcbZXVd0PIM?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
-
-
+- Coaching Images:
+    - coach-elaine-jurun.webp
+        - Image of Figure Skating Director
+        - Sourced from Figure Skating Director
+        - Permission: Elaine Jurun
+        - Original Format: PNG
+        - Current Format: Webp
+        - Current dimensions: 400px * 400px
+        - Expected display size: 300px * 300px
+        - Alt text: "Image of figure skating director, Elaine Jurun"
+        - Further alt description not necessary as the card the image lays on has the rest of the information needed
+    - coach-sample-1.webp
+        - Stock image of figure skater
+        - Sourced from Unsplash, https://unsplash.com/photos/a-young-female-figure-skater-performs-on-ice-YFWqyOENE2o?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText
+        - Permission: Free/open licensing
+        - Original Format: PNG
+        - Current Format: Webp
+        - Current dimensions: 400px * 400px
+        - Expected display size: 300px * 300px
+        - Alt text: "Image of basics coach, Jessica jones"
+        - Further alt description not necessary as the card the image lays on has the rest of the information needed
+    - coach-sample-2.webp
+        - Stock image of figure skater
+        - Sourced from Unsplash, https://unsplash.com/photos/woman-performing-on-ice-skate-field-OcbZXVd0PIM?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText
+        - Permission: Free/open licensing
+        - Original Format: PNG
+        - Current Format: Webp
+        - Current dimensions: 400px * 400px
+        - Expected display size: 300px * 300px
+        - Alt text: "Image of freestyle coach, Paulina Paloma"
+        - Further alt description not necessary as the card the image lays on has the rest of the information needed
 - Local Events Card Images:
     - ice-crystal-classic-2026
         - Logo image from Portland Ice Skating Club competition site
