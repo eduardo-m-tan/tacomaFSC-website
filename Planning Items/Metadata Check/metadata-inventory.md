@@ -31,7 +31,7 @@
   - Title Plan: Schedule | Tacoma Figure Skating Club
   - Description Plan: "Welcome to the Tacoma Figure Skating Club website! Take a look at our weekly schedule to see when you can come skate!"
   - Heading/link Check: h2 heading in the hero provides a call to action of "Come skate with us!", added a "looking for something else?" section that links to other pages that would be of interest, related to the primary page content, this page links to the "group-classes.html" page and the "coaches.html" page and both are given a brief description of who should click on each link
-  - Canonical Link: 
+  - Canonical Link: "https://eduardo-m-tan.github.io/tacomaFSC-website/schedule.html"
 
 - Coaches
   - Purpose: Give a brief description for the director and each additional coaching staff

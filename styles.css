@@ -272,7 +272,7 @@
 
   /* Hero Styles */
   .hero {
-    background: linear-gradient(var(--color-important), rgba(0, 0, 0, 0.5) 0%), url("images/hero-image/hero-image-2560px.png");
+    background: linear-gradient(var(--color-important), rgba(0, 0, 0, 0.5) 0%), url("images/hero-image/hero-image-1440px.webp");
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;

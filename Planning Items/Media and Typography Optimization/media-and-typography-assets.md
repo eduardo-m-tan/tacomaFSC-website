@@ -50,6 +50,12 @@
     - Format: PENDING
     - Expected Display: Max of 300px wide for cards
     - Alt text: "Image of Coach PLACEHOLDER"
+
+Photo by <a href="https://unsplash.com/@desiraygreen?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Desiray Green</a> on <a href="https://unsplash.com/photos/a-young-female-figure-skater-performs-on-ice-YFWqyOENE2o?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
+
+Photo by <a href="https://unsplash.com/@josephcosta?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Joseph Costa</a> on <a href="https://unsplash.com/photos/woman-performing-on-ice-skate-field-OcbZXVd0PIM?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
+
+
 - Local Events Card Images:
     - ice-crystal-classic-2026
         - Logo image from Portland Ice Skating Club competition site
